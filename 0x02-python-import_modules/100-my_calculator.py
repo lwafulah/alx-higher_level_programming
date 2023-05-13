@@ -3,39 +3,30 @@
 import sys
 from calculator_1 import add, sub, mul, div
 
-# Check if number of arguments
-if len(sys.argv) != 4:
-    print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-    sys.exit(1)
+def main():
+    # Check if number of arguments
+    if len(sys.argv) != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        sys.exit(1)
 
-# Get the arguments and operator
-a, operator, b = sys.argv[1:]
+    # Get the arguments
+    a = int(sys.argv[1])
+    operator = sys.argv[2]
+    b = int(sys.argv[3])
 
-# Check if operator is valid
-if operator not in "+-*/":
-    print("Unknown operator. Available operators: +, -, * and /")
-    sys.exit(1)
+    if operator == '+':
+        result = add(a, b)
+    elif operator == '-':
+        result = sub(a, b)
+    elif operator == '*':
+        result = mul(a, b)
+    elif operator == '/':
+        result = div(a, b)
+    else:
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
-# Cast the arguments to integers
-try:
-    a = int(a)
-    b = int(b)
-except ValueError:
-    print("Invalid argument. Usage: ./100-my_calculator.py <a> <operator> <b>")
-    sys.exit(1)
+    print("{} {} {} = {}".format(a, operator, b, result))
 
-# Perform the operation
-if operator == "+":
-    result = add(a, b)
-elif operator == "-":
-    result = sub(a, b)
-elif operator == "*":
-    result = mul(a, b)
-elif operator == "/":
-    result = div(a, b)
-
-# Print the result
-print("{} {} {} = {}".format(a, operator, b, result))
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
