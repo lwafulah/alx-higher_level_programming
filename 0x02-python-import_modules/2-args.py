@@ -2,12 +2,11 @@
 
 import sys
 
-arg = sys.argv[1:]
-num = len(arg)
-print(f"num {number of argument(s)}")
-if num == 0:
-    print(".")
-else:
-    print("argument{}:".format("s" if num > 1 else ""))
+def main(args):
+    num = len(args)
+    print(f"{num} argument{'s' if num != 1 else ''}:")
     for i, arg in enumerate(args, start=1):
         print(f"{i}: {arg}")
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
