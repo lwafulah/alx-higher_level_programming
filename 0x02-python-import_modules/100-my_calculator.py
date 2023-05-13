@@ -36,3 +36,6 @@ elif operator == "/":
 
 # Print the result
 print("{} {} {} = {}".format(a, operator, b, result))
+
+if __name__ == '__main__':
+    main()
