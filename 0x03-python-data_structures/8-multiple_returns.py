@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 def multiple_returns(sentence):
-
     if not sentence:
-        return None
+        first_character = None
     else:
         first_character = sentence[0]
 
