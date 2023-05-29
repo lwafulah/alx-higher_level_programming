@@ -4,7 +4,7 @@ import sys
 
 def safe_print_integer_err(value):
     try:
-        value = int(value)  # Convert the value to an integer
+        value = int(value)
         print(value)
         return True
     except ValueError:
