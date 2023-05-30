@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-"""Define a square"""
+"""Defines a class Square"""
+
 
 class Square:
-    """A Square class that defines a square with size"""
+    """
+    Class that defines properties of square.
 
+    Attributes:
+        size: size of a square
+    """
     def __init__(self, size):
-        """Initialize a Square object
+        """Creates new instances of square
 
         Args:
-            size (int): The size of the square.
+            size: size of the square.
         """
-        self._size = size
+        self.__size = size
